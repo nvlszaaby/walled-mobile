@@ -1,9 +1,12 @@
 // import { text } from "express";
 import {TouchableOpacity, Text, StyleSheet} from "react-native"
 
-function Button({ bgColor="#19918F", text}){
+function Button({ bgColor="#19918F", text, handlePress}){
     return(
-        <TouchableOpacity style={{...styles.button, backgroundColor: bgColor}}>
+        <TouchableOpacity 
+          onPress= {handlePress} 
+          style={{...styles.button, backgroundColor: bgColor}}
+        >
         <Text style={styles.buttonText}>{text}</Text>
       </TouchableOpacity>
     )
@@ -17,7 +20,8 @@ const styles = StyleSheet.create({
       borderRadius: 15,
       width: '100%',
       alignItems: 'center',
-  
+      marginTop: 10,
+      marginBottom: 10
     },
     buttonText: {
       color: '#fff',
